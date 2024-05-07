@@ -14,12 +14,12 @@ import java.time.LocalDateTime;
 public class Event {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
     @Column(nullable = false)
     private String name;
     @OneToOne
     @JoinColumn(name = "owner_id")
-    private dbUser owner;
+    private User owner;
     @Column(nullable = false)
     private LocalDateTime beginDate;
     @Column(nullable = false)
